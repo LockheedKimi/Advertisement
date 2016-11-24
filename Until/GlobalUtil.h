@@ -13,7 +13,7 @@
 
 
 //获取城市字符UTF8编码
-+ (NSString*)getDataUTF8:(NSString *)string;
+//+ (NSString*)getDataUTF8:(NSString *)string;
 
 
 + (NSDictionary *)dictionaryWithjsonData:(NSData *)jsonData;

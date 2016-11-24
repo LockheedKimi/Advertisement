@@ -12,7 +12,6 @@
 #import "GlobalUtil.h"
 #import "AFHTTPRequestOperationManager.h"
 #import "NSDictionary+mutableDeepCopy.h"
-#import "NetDataModel.h"
 
 #define BAIDU_DEVELOMENT_KEY @"63XdtQu3ahY2ga5sFeA8LsVl"
 
@@ -190,45 +189,45 @@ typedef NS_ENUM(NSInteger, RequestMethodType){
 /*=========================请求方法回调===========================*/
 
 //标签
-+ (void)reportWithReportorContent:(NSDictionary *)content
-                    success:(void (^)(id response))success
-                    failure:(void (^)(NSError* err))failure {
-    
-    [NetworkClient requestWihtMethod:RequestMethodTypePost url:@"/user" params:content success:^(id response) {
-        success(response);
-    } failure:^(NSError *err) {
-        failure(err);
-    }];
-}
+//+ (void)reportWithReportorContent:(NSDictionary *)content
+//                    success:(void (^)(id response))success
+//                    failure:(void (^)(NSError* err))failure {
+//    
+//    [NetworkClient requestWihtMethod:RequestMethodTypePost url:@"/user" params:content success:^(id response) {
+//        success(response);
+//    } failure:^(NSError *err) {
+//        failure(err);
+//    }];
+//}
 
-+(void)getLongitudeLatitudeString:(NSString*)string
-                          success:(void (^)(id response))success
-                          failure:(void (^)(NSError* err))failure
-{
-    
-    NSString* str = [GlobalUtil getDataUTF8:string];
-    [NetworkClient requestWihtMethod:RequestMethodTypeGet url:[NSString stringWithFormat:@"/geocoder?address=%@&output=json&key=%@",str,BAIDU_DEVELOMENT_KEY] params:nil success:^(id response){
-//        NSDictionary* dic = (NSDictionary*)response;
-//        NetDataModel *model = [[NetDataModel alloc] initWithDictionary:dic error:nil];
-//        NSLog(@"%@",err.localizedDescription);
-        success(response);
-    } failure:^(NSError* err){
-        failure(err);
-        
-    }];
-}
+//+(void)getLongitudeLatitudeString:(NSString*)string
+//                          success:(void (^)(id response))success
+//                          failure:(void (^)(NSError* err))failure
+//{
+//    
+//    NSString* str = [GlobalUtil getDataUTF8:string];
+//    [NetworkClient requestWihtMethod:RequestMethodTypeGet url:[NSString stringWithFormat:@"/geocoder?address=%@&output=json&key=%@",str,BAIDU_DEVELOMENT_KEY] params:nil success:^(id response){
+////        NSDictionary* dic = (NSDictionary*)response;
+////        NetDataModel *model = [[NetDataModel alloc] initWithDictionary:dic error:nil];
+////        NSLog(@"%@",err.localizedDescription);
+//        success(response);
+//    } failure:^(NSError* err){
+//        failure(err);
+//        
+//    }];
+//}
 
 
-+ (void)textReportWithReportorContent:(NSDictionary *)content
-                          success:(void (^)(id response))success
-                          failure:(void (^)(NSError* err))failure {
-    
-    [NetworkClient requestWihtMethod:RequestMethodTypePost url:@"/mecv-protocol/assist"/*[NSString stringWithFormat:@"/mecv-protocol/%@",@"assist"]*/ params:content success:^(id response) {
-        success(response);
-    } failure:^(NSError *err) {
-        failure(err);
-    }];
-}
+//+ (void)textReportWithReportorContent:(NSDictionary *)content
+//                          success:(void (^)(id response))success
+//                          failure:(void (^)(NSError* err))failure {
+//    
+//    [NetworkClient requestWihtMethod:RequestMethodTypePost url:@"/mecv-protocol/assist"/*[NSString stringWithFormat:@"/mecv-protocol/%@",@"assist"]*/ params:content success:^(id response) {
+//        success(response);
+//    } failure:^(NSError *err) {
+//        failure(err);
+//    }];
+//}
 
 
 @end

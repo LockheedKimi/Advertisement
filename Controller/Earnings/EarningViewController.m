@@ -9,6 +9,10 @@
 #import "EarningViewController.h"
 
 @interface EarningViewController ()
+@property (weak, nonatomic) IBOutlet UIView *leftView;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
+@property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
+@property (weak, nonatomic) IBOutlet UILabel *infoState;
 
 @end
 
@@ -16,7 +20,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _leftView.backgroundColor = [UIColor clearColor];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithHexString:@"ea4745" alpha:1.0]];
     // Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning {

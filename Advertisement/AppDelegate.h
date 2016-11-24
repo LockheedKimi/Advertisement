@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MainTabViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+    @private
+            UINavigationController *_naviController;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 

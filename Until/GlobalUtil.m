@@ -41,12 +41,12 @@
 //}
 
 //获取城市字符UTF8编码
-+ (NSString*)getDataUTF8:(NSString *)string
-{
-    NSString *dataUTF8 = [string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//    NSString *dataUTF8 = [string stringByAddingPercentEncodingWithAllowedCharacters:NSUTF8StringEncoding];
-    return dataUTF8;
-}
+//+ (NSString*)getDataUTF8:(NSString *)string
+//{
+//    NSString *dataUTF8 = [string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+////    NSString *dataUTF8 = [string stringByAddingPercentEncodingWithAllowedCharacters:NSUTF8StringEncoding];
+//    return dataUTF8;
+//}
 
 + (UIBarButtonItem*)createBarButtonItemWithTitle:(NSString*)buttonTitle target:(id)target action:(SEL)action
 {

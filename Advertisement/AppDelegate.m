@@ -8,7 +8,9 @@
 
 #import "AppDelegate.h"
 
+
 @interface AppDelegate ()
+
 
 @end
 
@@ -17,8 +19,45 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];// 初始化DDLog日志输出，在这里，我们仅仅希望在xCode控制台输出
+    
+    UITabBarController * maintabVc = [MainTabViewController instance];
+    self.window.rootViewController = maintabVc;
+    //    UIViewController* controller = [self getCurrentVC];
+    //    [controller presentViewController:maintabVc animated:YES completion:nil];
+    [_window makeKeyAndVisible];
     return YES;
 }
+//得到当前控制器
+- (UIViewController *)getCurrentVC {
+    
+    UIViewController *result = nil;
+    
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    if (window.windowLevel != UIWindowLevelNormal) {
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for(UIWindow * tmpWin in windows)
+        {
+            if (tmpWin.windowLevel == UIWindowLevelNormal)
+            {
+                window = tmpWin;
+                break;
+            }
+        }
+    }
+    
+    UIView *frontView = [[window subviews] objectAtIndex:0];
+    id nextResponder = [frontView nextResponder];
+    
+    if ([nextResponder isKindOfClass:[UIViewController class]])
+        result = nextResponder;
+    else
+        result = window.rootViewController;
+    
+    return result;
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

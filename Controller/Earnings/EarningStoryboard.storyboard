@@ -1,32 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="b4k-Zl-uay">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="9N9-mn-btb">
+            <objects>
+                <navigationController storyboardIdentifier="EarningNV" id="b4k-Zl-uay" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ich-hD-ZMe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="RA2-9P-EoD" kind="relationship" relationship="rootViewController" id="k0X-MH-MuE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mkb-qB-PGK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-812" y="205"/>
+        </scene>
+        <!--Earning View Controller-->
         <scene sceneID="QVO-J9-Frm">
             <objects>
-                <viewController id="RA2-9P-EoD" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="RA2-9P-EoD" customClass="EarningViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UMG-eC-e31"/>
                         <viewControllerLayoutGuide type="bottom" id="0cx-se-fOV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XFW-rk-lL7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vx1-YP-oKn">
+                                <rect key="frame" x="0.0" y="64" width="320" height="114"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vx1-YP-oKn" secondAttribute="height" multiplier="640:228" id="L0M-b4-yux"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vx1-YP-oKn" firstAttribute="leading" secondItem="XFW-rk-lL7" secondAttribute="leading" id="TwU-9v-Ygn"/>
+                            <constraint firstItem="vx1-YP-oKn" firstAttribute="top" secondItem="UMG-eC-e31" secondAttribute="bottom" id="bez-nv-QZN"/>
+                            <constraint firstAttribute="trailing" secondItem="vx1-YP-oKn" secondAttribute="trailing" id="nOs-nC-dod"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="0Qz-3f-uya"/>
+                    <navigationItem key="navigationItem" id="YhP-QP-jYI">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="pPa-JJ-Wi2">
+                            <view key="customView" contentMode="scaleToFill" id="REW-al-A2t">
+                                <rect key="frame" x="16" y="5" width="128" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cbd-90-Cck">
+                                        <rect key="frame" x="65" y="8" width="63" height="2"/>
+                                        <color key="progressTintColor" red="0.95312052965164185" green="0.80427461862564087" blue="0.40174669027328491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="trackTintColor" red="0.91545873880386353" green="0.28381627798080444" blue="0.28016406297683716" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </progressView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tx" translatesAutoresizingMaskIntoConstraints="NO" id="akx-UN-EWh">
+                                        <rect key="frame" x="0.0" y="-4" width="40" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="AwK-HK-6RK"/>
+                                            <constraint firstAttribute="height" constant="40" id="vAQ-ap-cNj"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="达尔文／身份未认证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwg-ld-N1d">
+                                        <rect key="frame" x="40" y="21" width="92" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LV3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbT-pa-fiu">
+                                        <rect key="frame" x="40" y="0.0" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="bsi-93-QIC"/>
+                                            <constraint firstAttribute="height" constant="20" id="dDD-LL-p2n"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.8901936411857605" green="0.89087069034576416" blue="0.89029854536056519" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="IbT-pa-fiu" firstAttribute="leading" secondItem="akx-UN-EWh" secondAttribute="trailing" id="23L-4X-Yaw"/>
+                                    <constraint firstAttribute="bottom" secondItem="lwg-ld-N1d" secondAttribute="bottom" id="Gr1-Q4-hHp"/>
+                                    <constraint firstItem="akx-UN-EWh" firstAttribute="centerY" secondItem="REW-al-A2t" secondAttribute="centerY" id="Ijf-O6-RDb"/>
+                                    <constraint firstAttribute="trailing" secondItem="cbd-90-Cck" secondAttribute="trailing" id="IxA-2U-LlL"/>
+                                    <constraint firstItem="akx-UN-EWh" firstAttribute="leading" secondItem="REW-al-A2t" secondAttribute="leading" id="PG8-HD-wap"/>
+                                    <constraint firstItem="cbd-90-Cck" firstAttribute="top" secondItem="REW-al-A2t" secondAttribute="topMargin" id="bk5-Hl-dh0"/>
+                                    <constraint firstItem="cbd-90-Cck" firstAttribute="leading" secondItem="REW-al-A2t" secondAttribute="leading" constant="65" id="kFA-WP-uOU"/>
+                                    <constraint firstItem="lwg-ld-N1d" firstAttribute="leading" secondItem="IbT-pa-fiu" secondAttribute="leading" id="tYe-9w-8FA"/>
+                                    <constraint firstItem="IbT-pa-fiu" firstAttribute="top" secondItem="REW-al-A2t" secondAttribute="top" id="y6Z-9v-tsw"/>
+                                </constraints>
+                            </view>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="qd" id="T69-qf-vON"/>
+                            <barButtonItem image="gg" id="Od3-Ep-RLz"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="headerImageView" destination="akx-UN-EWh" id="t7F-mv-jdC"/>
+                        <outlet property="infoState" destination="lwg-ld-N1d" id="Agv-0c-dLf"/>
+                        <outlet property="leftView" destination="REW-al-A2t" id="GF4-wc-cS4"/>
+                        <outlet property="progressView" destination="cbd-90-Cck" id="9jX-bQ-R0X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56F-RM-4T9" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="63" y="190"/>
+            <point key="canvasLocation" x="-45" y="204.92957746478874"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gg" width="15" height="14"/>
+        <image name="qd" width="16" height="15"/>
+        <image name="tx" width="28" height="27"/>
+    </resources>
 </document>
